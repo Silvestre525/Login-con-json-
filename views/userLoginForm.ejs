@@ -16,6 +16,7 @@
 							<div class="form-group">
 								<label><b>Correo electrónico:</b></label>
 								<input type="text" name="email" class="form-control">
+								<!--si locals tiene algun error y si ese error esta en el email que me imprima el mensaje que tengo en mi objeto error con la clase text danger que me deja con colorcito rojo el mensaje,error es el objeto que Tengo en mi controlador de processlogin-->
 								<% if (locals.errors && errors.email) { %>
 									<div class="text-danger">
 										<%= errors.email.msg %>
@@ -27,6 +28,11 @@
 							<div class="form-group">
 								<label><b>Password:</b></label>
 								<input type="password" name="password" class="form-control">
+								<% if(locals.errors && errors.password) { %>
+									<div class="text-danger">
+										<%= errors.password.msg %>
+									</div> 
+									<% } %>  
 								<div class="invalid-feedback">
 								</div>
 							</div>

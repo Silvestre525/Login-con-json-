@@ -1,4 +1,5 @@
 const express = require('express');
+//Requeimos session
 const session = require('express-session');
 const cookies = require('cookie-parser');
 
@@ -6,6 +7,7 @@ const app = express();
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
+//Usamos session
 app.use(session({
 	secret: "Shhh, It's a secret",
 	resave: false,

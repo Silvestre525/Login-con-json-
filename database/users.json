@@ -6,5 +6,21 @@
   "password": "$2a$10$kbHNepDXku1qKDytFK3RpuLtkW/dqMGDi4jXL7lNQUF8lm1HZ2.N.",
   "country": "Colombia",
   "avatar": "1609285636788_img.jpg"
+ },
+ {
+  "id": 2,
+  "fullName": "Carlos Silvestre Villar",
+  "email": "silvestrevillar02@gmail.com",
+  "password": "$2a$10$dG2x/al7aanZQctaWPDM7e1CG5Q8se3FOfu9mZtpxlxEV5UWfzk6C",
+  "country": "Argentina",
+  "avatar": "1671566894730_img.jpg"
+ },
+ {
+  "id": 3,
+  "fullName": "Carlos Silvestre Villar",
+  "email": "silvestrevillar2@gmail.com",
+  "password": "$2a$10$z2hHnmvw7hY/llctfhqtAOxL3cox64UneMcgNH4vRznK01b7HQcP2",
+  "country": "Argentina",
+  "avatar": "1674871092792_img.jpg"
  }
 ]
