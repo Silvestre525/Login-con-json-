@@ -29,6 +29,7 @@
 								<label><b>Password:</b></label>
 								<input type="password" name="password" class="form-control">
 								<% if(locals.errors && errors.password) { %>
+									<!-- Imprimimos dentro de un div el mensaje que tenemosen nuesto objeto error atributo password-->
 									<div class="text-danger">
 										<%= errors.password.msg %>
 									</div> 

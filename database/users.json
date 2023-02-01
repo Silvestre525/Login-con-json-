@@ -22,5 +22,13 @@
   "password": "$2a$10$z2hHnmvw7hY/llctfhqtAOxL3cox64UneMcgNH4vRznK01b7HQcP2",
   "country": "Argentina",
   "avatar": "1674871092792_img.jpg"
+ },
+ {
+  "id": 4,
+  "fullName": "Sofia Milagros Villar",
+  "email": "wofiamilagrosvilla2@gmial.com",
+  "password": "$2a$10$NZ4VBkQX/K8lSiw8hKFv6usD4R43aIiS9x09XZBCXpX0TU9ajh/XS",
+  "country": "Argentina",
+  "avatar": "1675205377016_img.jpg"
  }
 ]

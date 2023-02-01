@@ -7,7 +7,7 @@ const app = express();
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
-//Usamos session
+//Usamos session y la configuramos
 app.use(session({
 	secret: "Shhh, It's a secret",
 	resave: false,
@@ -16,6 +16,7 @@ app.use(session({
 
 app.use(cookies());
 
+//Esto tiene que ir despues de session si no no va a funcionar
 app.use(userLoggedMiddleware);
 
 app.use(express.urlencoded({ extended: false }));

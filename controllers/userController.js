@@ -65,14 +65,14 @@ const controller = {
 
 		//Si mi Usuario existe en la DB entonces
 		if(userToLogin) {
-
 			//Comparamos nustro password que tenemos hasheado con el metodo compareSync y guardamos en una variable
 			//EL METODO COMPARESYNC nos devolvera un booleano true o false. 
 			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-
 			//Si ese booleano nos devuelve true
 			if (isOkThePassword) {
+				//Antes de pasarle toda la informacion del usuario a session, borramosel password por seguridad.
 				delete userToLogin.password;
+				//Le estoy dando al atributo o propiedad userLogged de session toda la informacion que hay dentro de userToLogin
 				req.session.userLogged = userToLogin;
 
 				if(req.body.remember_user) {
@@ -101,14 +101,19 @@ const controller = {
 			}
 		});
 	},
+	//Ahora el profile en session tiene toda la informacion de nuestro usuario logeado
+	//Ya que mas arriba del codigo le dimos esa informacion al objeto session
 	profile: (req, res) => {
 		return res.render('userProfile', {
+			//A la variable user le pasamos los valores de session que anteriormente recibieron la informacion de usuario logeado.
+			//y asi con la variable user imprimimos al usuario en la vista con ejs. trabajamos en la vista Userprofile
 			user: req.session.userLogged
 		});
 	},
 
 	logout: (req, res) => {
 		res.clearCookie('userEmail');
+		//Borra todo lo que esta en session, lo destruye.
 		req.session.destroy();
 		return res.redirect('/');
 	}
