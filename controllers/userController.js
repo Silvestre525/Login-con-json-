@@ -75,9 +75,12 @@ const controller = {
 				//Le estoy dando al atributo o propiedad userLogged de session toda la informacion que hay dentro de userToLogin
 				req.session.userLogged = userToLogin;
 
+				//Si esta encendido el tik de recordar usuario,
+				//que setee una cookie, se crea la cookie con el valor del mail que tenemos en el body
+				//despues sigue en el userloggermiddleware
 				if(req.body.remember_user) {
 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-				}
+				}	 
 				//Si la contrasena y el email es correcto nos redigira a la vista perfil de usuario
 				return res.redirect('/user/profile');
 			} 
@@ -112,6 +115,7 @@ const controller = {
 	},
 
 	logout: (req, res) => {
+		//Borramos lo que hay en la cookie cuando le damoas al boton logout
 		res.clearCookie('userEmail');
 		//Borra todo lo que esta en session, lo destruye.
 		req.session.destroy();

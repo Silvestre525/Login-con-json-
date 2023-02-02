@@ -13,7 +13,7 @@ app.use(session({
 	resave: false,
 	saveUninitialized: false,
 }));
-
+//Utiliazamos cookies que es un middleware de aplicacion
 app.use(cookies());
 
 //Esto tiene que ir despues de session si no no va a funcionar
